@@ -11,7 +11,7 @@ export PATH=$PATH:/var/vcap/packages/cf-cli-6-linux/bin
 <% end %>
 
 
-CF_API_URL='<%= p("cf.api_url") %>'
+CF_API_URL='<%= p("cf.insecure_api_url") %>'
 
 set +x
 CF_ADMIN_USERNAME='<%= p("cf.admin_username") %>'

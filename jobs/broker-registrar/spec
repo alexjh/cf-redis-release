@@ -5,7 +5,7 @@ packages:
 templates:
   errand.sh.erb: bin/run
 properties:
-  cf.api_url:
+  cf.insecure_api_url:
     description: 'Full URL of Cloud Foundry API'
   cf.admin_username:
     description: 'Username of the admin user'
