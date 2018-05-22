@@ -33,17 +33,17 @@ case $1 in
     chmod 750 ${PIDFILE_DIR}
 
     # Recommended for running redis on a VM in production (https://www.pivotaltracker.com/story/show/74949514)
-    sysctl vm.overcommit_memory=1
+    # sysctl vm.overcommit_memory=1
 
     # Redis complains if you set maxclients to over the number of open file descriptors.
     # This value is (maxclients + 32).
     ulimit -n 10032
 
-    if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
-      echo never > /sys/kernel/mm/transparent_hugepage/enabled
-    fi
+    # if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+    #   echo never > /sys/kernel/mm/transparent_hugepage/enabled
+    # fi
 
-    sysctl -w net.core.somaxconn=511
+    # sysctl -w net.core.somaxconn=511
 
     export BROKER_CONFIG_PATH=$JOB_DIR/config/broker.yml
 
